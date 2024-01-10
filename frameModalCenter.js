@@ -1,15 +1,19 @@
 (function () {
   // Inject CSS
   var css = `
+      html {
+        font-size: 16px !important;
+      }
       .mattressai-button-style {
       border: none;
       background-color: #3f3f46A6;
       backdrop-filter: blur(60px);
       padding: 4px;
+      padding-right: 8px !important;
       position: fixed;
       bottom: 20px;
       left: 50%;
-      width: 150px;
+      min-width: min-content;
       white-space: nowrap;
       transform: translateX(-50%);
       border-radius: 9999px;
@@ -67,18 +71,21 @@
     @media (max-width: 768px) {
       .mattressai-modal-container {
         position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
+        bottom: 0 !important; /* Anchor to the bottom */
+        left: 0 !important; /* Stretch to the left edge */
+        right: 0 !important; /* Stretch to the right edge */
+        top: auto !important; /* Override any top positioning */
+        height: 90vh; /* 90% of the viewport height */
+        width: 100vw; /* Full viewport width */
         min-width: 100vw;
-        max-height: calc(100% - 10px) !important;
         margin: 0 !important;
         padding: 0 !important;
         border-radius: 0 !important;
-        box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-        transform: none !important;
+        box-shadow: none !important; /* Optional: remove shadow if not needed */
+        transform: none !important; /* Remove transform */
       }
     }
+
   `;
   var style = document.createElement("style");
   if (style.styleSheet) {
@@ -101,7 +108,7 @@
         width="40"
         alt="Open Modal"
       />
-      <p>Chat with AI</p>
+      <p>Find Your Mattress</p>
     </button>
 
     <div id="modal" class="mattressai-modal-background" style="display: none; width: 100%; height: 100%;" onclick="closeModal(event)">
