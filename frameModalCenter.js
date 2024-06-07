@@ -1,9 +1,6 @@
 (function () {
   // Inject CSS
   var css = `
-      html {
-        font-size: 16px !important;
-      }
       .mattressai-button-style {
       border: none;
       background-color: #3f3f46A6;
