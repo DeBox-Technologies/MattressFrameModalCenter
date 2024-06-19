@@ -1,38 +1,32 @@
 (function () {
   // Inject CSS
   var css = `
-      .mattressai-button-style {
-      border: none;
-      background-color: #3f3f46A6;
-      backdrop-filter: blur(60px);
-      padding: 4px;
-      padding-right: 8px !important;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      min-width: min-content;
-      white-space: nowrap;
-      transform: translateX(-50%);
-      border-radius: 9999px;
-      z-index: 50;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-      cursor: pointer;
+    .mattressai-button-style {
       display: flex;
-      flex-direction: row;
-      justify-content: justify-between;
       align-items: center;
-      gap: 8px;
-      color: #e4e4e7;
-      font-weight: 300;
-      drop-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      border: none;
+      background-color: #2196F3;
+      backdrop-filter: blur(60px);
+      padding: 12px 24px;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 20px;
+      border-radius: 20px;
+      z-index: 50;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      color: white;
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
     }
     .mattressai-button-style:hover {
-      border: none;
       background-color: #52525bA6;
-      backdrop-filter: blur(60px);
     }
     .mattressai-button-image {
-      background-color: #27272a;
+      margin-right: 10px;
       border-radius: 9999px;
     }
     .mattressai-modal-background {
@@ -48,13 +42,11 @@
     .mattressai-modal-container {
       border: none;
       position: fixed;
-      bottom: 1rem;
-      right: 1rem;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: #18181b;
-      border-radius: 50%;
+      border-radius: 20px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       max-width: 90%;
       width: 80%;
@@ -63,7 +55,9 @@
     }
     iframe {
       border: none;
-      border-radius: 50%;border-radius: 50%;border-radius: 50%;border-radius: 50%;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
     }
     @media (max-width: 768px) {
       .mattressai-modal-container {
@@ -105,12 +99,12 @@
         width="40"
         alt="Open Modal"
       />
-      <p>Find Your Mattress</p>
+      <span>Find Your Mattress</span>
     </button>
 
     <div id="modal" class="mattressai-modal-background" style="display: none; width: 100%; height: 100%;" onclick="closeModal(event)">
       <div class="mattressai-modal-container" onclick="event.stopPropagation()">
-        <iframe src="${iframeSrc}" style="border-radius: 20px; width: 100%; height: 100%; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+        <iframe src="${iframeSrc}" style="border-radius: 20px; width: 100%; height: 100%;"></iframe>
       </div>
     </div>
   `;
