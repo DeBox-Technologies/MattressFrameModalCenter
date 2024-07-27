@@ -95,7 +95,7 @@
     <button onclick="openModal()" class="mattressai-button-style">
       <img
         class="mattressai-button-image"
-        src="https://res.cloudinary.com/djr22sgp3/image/upload/v1689685357/mattress_ai_logo_circle_2_aw3f3q.png"
+        src="https://res.cloudinary.com/dkbn21xdu/image/upload/v1720271826/fff_fufol2.png"
         width="40"
         alt="Open Modal"
       />
